@@ -32,6 +32,34 @@
 -- on dept_emp.dept_no = departments.dept_no
 
 -- -- list first name, last name, sex where first name = Hercules and last names start with B
+-- select
+-- employees.first_name, employees.last_name, employees.sex
+-- from employees
+-- where employees.first_name = 'Hercules' and employees.last_name like 'B%'
+
 -- -- list all employees in Sales: employee number, last name, first name, dept name
+-- select
+-- dept_emp.emp_no, employees.last_name, employees.first_name, departments.dept_name
+-- from dept_emp
+-- join employees
+-- on dept_emp.emp_no = employees.emp_no
+-- join departments
+-- on dept_emp.dept_no = departments.dept_no
+-- where departments.dept_name = 'Sales'
+
 -- -- list all in sales and Dev: employee number, last name, first name, dept name
+-- select
+-- dept_emp.emp_no, employees.last_name, employees.first_name, departments.dept_name
+-- from dept_emp
+-- join employees
+-- on dept_emp.emp_no = employees.emp_no
+-- join departments
+-- on dept_emp.dept_no = departments.dept_no
+-- where departments.dept_name = 'Sales' or departments.dept_name = 'Development'
+
 -- -- descending order, list frequency count of employee last names(group by)
+-- select employees.last_name, 
+-- count(employees.last_name) as "last name frequency"
+-- from employees
+-- group by employees.last_name
+-- order by "last name frequency" DESC;
